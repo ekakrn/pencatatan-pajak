@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Tax extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'penjualan',
+        'beban_administrasi',
+        'beban_pemasaran',
+        'beban_lainnya',
+        'pendapatan_lain',
+        'total',
+        'total_dengan_pajak',
+    ];
 }
