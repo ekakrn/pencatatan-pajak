@@ -20,7 +20,10 @@
                     <nav class="navbar navbar-expand-lg bg-dark mb-5">
                         <div class="container">
                             <a class="navbar-brand text-light" href="#">Pencatatan Pajak</a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <button class="navbar-toggler" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -55,6 +58,37 @@
 
         <script>
             let table = new DataTable('#dataTable');
+
+            $(document).ready(function () {
+                let initialValues = {};
+
+                // Store initial values in an object
+                $('input').each(function () {
+                    initialValues[this.id] = $(this).val();
+                });
+
+                // Add a change event listener to all input elements
+                $('input').on('change', function () {
+                    let inputId = this.id;
+                    if ($(this).val() !== initialValues[inputId]) {
+                        hitungPajak();
+                    }
+                });
+
+                function hitungPajak() {
+                    const penjualan = $('#penjualan').val() ?? 0;
+                    const bebanAdm = $('#bebanAdministrasi').val() ?? 0;
+                    const bebanPemasaran = $('#bebanPemasaran').val() ?? 0;
+                    const bebanLainnya = $('#bebanLainnya').val() ?? 0;
+                    const pendapatanLainnya = $('#pendapatanLainnya').val() ?? 0;
+                    const total = penjualan - bebanAdm - bebanPemasaran - bebanLainnya + parseInt(pendapatanLainnya);
+                    const totalPajak = total * 22 / 100;
+
+                    $('#total').val(total);
+                    $('#totalPajak').val(totalPajak);
+                }
+            });
+
         </script>
 
     </body>

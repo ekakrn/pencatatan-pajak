@@ -63,7 +63,7 @@
                 <label for="totalPajak" class="col-sm-3 col-form-label">Pajak Terutang Badan (22%)</label>
                 <div class="col-sm-9">
                     <input type="number" class="form-control border border-dark bg-secondary-subtle"
-                    name="total_dengan_pajak" id="totalPajak" readonly>
+                    name="total_pajak" id="totalPajak" readonly>
                 </div>
             </div>
             <div class="row">
