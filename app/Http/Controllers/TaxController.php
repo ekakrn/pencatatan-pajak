@@ -22,6 +22,15 @@ class TaxController extends Controller
         return redirect('login')->withSuccess(AuthController::NOT_ALLOWED);
     }
 
+    public function addPage()
+    {
+        if (Auth::check()) {
+            return view('add');
+        }
+   
+        return redirect('login')->withSuccess(AuthController::NOT_ALLOWED);
+    }
+
     public function addData(Request $request)
     {
         if (Auth::check()) {
