@@ -9,13 +9,14 @@ use Illuminate\Support\Facades\Auth;
 class TaxController extends Controller
 {
     const REDIRECT_VIEW = "/";
+    const TITLE = "Pencatatan Pajak";
 
     public function index()
     {
         if (Auth::check()) {
             return view('taxes', [
                 'taxes' => Tax::latest('created_at')->get(),
-                'title' => 'Pencatatan Pajak',
+                'title' => self::TITLE,
             ]);
         }
    
@@ -25,7 +26,9 @@ class TaxController extends Controller
     public function addPage()
     {
         if (Auth::check()) {
-            return view('add');
+            return view('add', [
+                'title' => self::TITLE,
+            ]);
         }
    
         return redirect('login')->withSuccess(AuthController::NOT_ALLOWED);
