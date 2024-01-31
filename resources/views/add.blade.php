@@ -22,49 +22,49 @@
                 <label for="penjualan" class="col-sm-3 col-form-label">Penjualan</label>
                 <div class="col-sm-9">
                     <input type="number" class="form-control border border-dark"
-                    name="penjualan" id="penjualan">
+                    name="penjualan" id="penjualan" value="0" onkeyup="hitungPajak()">
                 </div>
             </div>
             <div class="mb-3 row">
                 <label for="bebanAdministrasi" class="col-sm-3 col-form-label">Beban Administrasi</label>
                 <div class="col-sm-9">
                     <input type="number" class="form-control border border-dark"
-                    name="beban_administrasi" id="bebanAdministrasi">
+                    name="beban_administrasi" value="0" id="bebanAdministrasi" onkeyup="hitungPajak()">
                 </div>
             </div>
             <div class="mb-3 row">
                 <label for="bebanPemasaran" class="col-sm-3 col-form-label">Beban Pemasaran</label>
                 <div class="col-sm-9">
                     <input type="number" class="form-control border border-dark"
-                    name="beban_pemasaran" id="bebanPemasaran">
+                    name="beban_pemasaran" value="0" id="bebanPemasaran" onkeyup="hitungPajak()">
                 </div>
             </div>
             <div class="mb-3 row">
                 <label for="bebanLainnya" class="col-sm-3 col-form-label">Beban Lainnya</label>
                 <div class="col-sm-9">
                     <input type="number" class="form-control border border-dark"
-                    name="beban_lainnya" id="bebanLainnya">
+                    name="beban_lainnya" value="0" id="bebanLainnya" onkeyup="hitungPajak()">
                 </div>
             </div>
             <div class="mb-3 row">
                 <label for="pendapatanLainnya" class="col-sm-3 col-form-label">Pendapatan Lainnya</label>
                 <div class="col-sm-9">
                     <input type="number" class="form-control border border-dark"
-                    name="pendapatan_lain" id="pendapatanLainnya">
+                    name="pendapatan_lain" value="0" id="pendapatanLainnya" onkeyup="hitungPajak()">
                 </div>
             </div>
             <div class="mb-3 row">
                 <label for="total" class="col-sm-3 col-form-label">Dasar Pengenaan Pajak</label>
                 <div class="col-sm-9">
                     <input type="number" class="form-control border border-dark bg-secondary-subtle"
-                    name="total" id="total" readonly>
+                    name="total" id="total" value="0" onkeyup="hitungPajak()" readonly>
                 </div>
             </div>
             <div class="mb-4 row">
                 <label for="totalPajak" class="col-sm-3 col-form-label">Pajak Terutang Badan (22%)</label>
                 <div class="col-sm-9">
                     <input type="number" class="form-control border border-dark bg-secondary-subtle"
-                    name="total_pajak" id="totalPajak" readonly>
+                    name="total_pajak" id="totalPajak" value="0" onkeyup="hitungPajak()" readonly>
                 </div>
             </div>
             <div class="row">

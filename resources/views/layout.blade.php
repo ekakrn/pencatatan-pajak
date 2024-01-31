@@ -59,35 +59,18 @@
         <script>
             let table = new DataTable('#dataTable');
 
-            $(document).ready(function () {
-                let initialValues = {};
+            function hitungPajak() {
+                const penjualan = $('#penjualan').val() ?? 0;
+                const bebanAdm = $('#bebanAdministrasi').val() ?? 0;
+                const bebanPemasaran = $('#bebanPemasaran').val() ?? 0;
+                const bebanLainnya = $('#bebanLainnya').val() ?? 0;
+                const pendapatanLainnya = $('#pendapatanLainnya').val() ?? 0;
+                const total = penjualan - bebanAdm - bebanPemasaran - bebanLainnya + parseInt(pendapatanLainnya);
+                const totalPajak = total * 22 / 100;
 
-                // Store initial values in an object
-                $('input').each(function () {
-                    initialValues[this.id] = $(this).val();
-                });
-
-                // Add a change event listener to all input elements
-                $('input').on('change', function () {
-                    let inputId = this.id;
-                    if ($(this).val() !== initialValues[inputId]) {
-                        hitungPajak();
-                    }
-                });
-
-                function hitungPajak() {
-                    const penjualan = $('#penjualan').val() ?? 0;
-                    const bebanAdm = $('#bebanAdministrasi').val() ?? 0;
-                    const bebanPemasaran = $('#bebanPemasaran').val() ?? 0;
-                    const bebanLainnya = $('#bebanLainnya').val() ?? 0;
-                    const pendapatanLainnya = $('#pendapatanLainnya').val() ?? 0;
-                    const total = penjualan - bebanAdm - bebanPemasaran - bebanLainnya + parseInt(pendapatanLainnya);
-                    const totalPajak = total * 22 / 100;
-
-                    $('#total').val(total);
-                    $('#totalPajak').val(totalPajak);
-                }
-            });
+                $('#total').val(total);
+                $('#totalPajak').val(totalPajak);
+            }
 
         </script>
 
