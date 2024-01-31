@@ -41,7 +41,7 @@
                             <td>Rp{{ number_format($data->total_pajak, 0, ',', '.') }}</td>
                             <td>
                                 <a href="/export-excel" class="btn btn-success mb-1">Excel</a>
-                                <a href="/edit-page" class="btn btn-primary mb-1">Ubah</a>
+                                <a href="/edit-page/{{ $data->id }}" class="btn btn-primary mb-1">Ubah</a>
                                 <form method="post" class="d-inline"
                                     title="Delete" action="/delete-data/{{ $data->id }}">
                                     {{ csrf_field() }}

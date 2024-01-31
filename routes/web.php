@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::delete('/delete-data/{id}', [TaxController::class, 'deleteData']);
+Route::post('/edit-data/{id}', [TaxController::class, 'updateData']);
+Route::get('/edit-page/{id}', [TaxController::class, 'editPage']);
 Route::post('/add-data', [TaxController::class, 'addData']);
 Route::get('/add-page', [TaxController::class, 'addPage']);
 Route::get('/', [TaxController::class, 'index']);

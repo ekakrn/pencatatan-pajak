@@ -34,6 +34,18 @@ class TaxController extends Controller
         return redirect('login')->withSuccess(AuthController::NOT_ALLOWED);
     }
 
+    public function editPage($id)
+    {
+        if (Auth::check()) {
+            return view('edit', [
+                'taxes' => Tax::find($id),
+                'title' => self::TITLE,
+            ]);
+        }
+   
+        return redirect('login')->withSuccess(AuthController::NOT_ALLOWED);
+    }
+
     public function addData(Request $request)
     {
         if (Auth::check()) {
@@ -66,7 +78,7 @@ class TaxController extends Controller
     public function updateData(Request $request)
     {
         if (Auth::check()) {
-            $id = $request->input('taxId');
+            $id = $request->input('tax_id');
 
             $this->validate($request, [
                 'penjualan' => 'required',
