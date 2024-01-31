@@ -11,6 +11,15 @@ class TaxController extends Controller
 {
     const REDIRECT_VIEW = "/";
     const TITLE = "Pencatatan Pajak";
+    const COLUMNS = [
+        'penjualan',
+        'beban_administrasi',
+        'beban_pemasaran',
+        'beban_lainnya',
+        'pendapatan_lain',
+        'total',
+        'total_pajak',
+    ];
 
     public function index()
     {
@@ -121,14 +130,11 @@ class TaxController extends Controller
 
     public function exportById($id)
     {
-        return \Excel::download(new ExportClass($id, [
-            'penjualan',
-            'beban_administrasi',
-            'beban_pemasaran',
-            'beban_lainnya',
-            'pendapatan_lain',
-            'total',
-            'total_pajak',
-        ]), 'exported_data_'.$id.'.xlsx');
+        return \Excel::download(new ExportClass(self::COLUMNS, $id), 'exported_data_'.$id.'.xlsx');
+    }
+
+    public function exportAll()
+    {
+        return \Excel::download(new ExportClass(self::COLUMNS), 'exported_data.xlsx');
     }
 }

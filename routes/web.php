@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/export-all', [TaxController::class, 'exportAll']);
 Route::get('/export-excel/{id}', [TaxController::class, 'exportById']);
 Route::delete('/delete-data/{id}', [TaxController::class, 'deleteData']);
 Route::post('/edit-data/{id}', [TaxController::class, 'updateData']);

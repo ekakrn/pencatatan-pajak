@@ -5,9 +5,10 @@
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Data Pajak</h1>
-    <a href="/add-page" class="btn btn-primary">
-        Tambah Data
-    </a>
+    <div>
+        <a href="/add-page" class="btn btn-primary">Tambah Data</a>
+        <a href="/export-all" class="btn btn-success">Export All</a>
+    </div>
 </div>
 
 <!-- DataTales -->

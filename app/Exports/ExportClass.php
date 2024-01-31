@@ -11,7 +11,7 @@ class ExportClass implements FromQuery, WithHeadings
     protected $id;
     protected $columns;
 
-    public function __construct($id, array $columns)
+    public function __construct(array $columns, $id = false)
     {
         $this->id = $id;
         $this->columns = $columns;
@@ -32,6 +32,10 @@ class ExportClass implements FromQuery, WithHeadings
 
     public function query()
     {
-        return Tax::where('id', $this->id)->select($this->columns);
+        if ($this->id) {
+            return Tax::where('id', $this->id)->select($this->columns);
+        } else {
+            return Tax::query()->select($this->columns);
+        }
     }
 }
