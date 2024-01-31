@@ -44,7 +44,7 @@ class TaxController extends Controller
                 'beban_lainnya' => 'required',
                 'pendapatan_lain' => 'required',
                 'total' => 'required',
-                'total_dengan_pajak' => 'required',
+                'total_pajak' => 'required',
             ]);
 
             Tax::create([
@@ -54,7 +54,7 @@ class TaxController extends Controller
                 'beban_lainnya' => $request->input('beban_lainnya'),
                 'pendapatan_lain' => $request->input('pendapatan_lain'),
                 'total' => $request->input('total'),
-                'total_dengan_pajak' => $request->input('total_dengan_pajak'),
+                'total_pajak' => $request->input('total_pajak'),
             ]);
             
             return redirect(self::REDIRECT_VIEW);
@@ -75,7 +75,7 @@ class TaxController extends Controller
                 'beban_lainnya' => 'required',
                 'pendapatan_lain' => 'required',
                 'total' => 'required',
-                'total_dengan_pajak' => 'required',
+                'total_pajak' => 'required',
             ]);
 
             $tax = Tax::find($id);
@@ -85,7 +85,7 @@ class TaxController extends Controller
             $tax->beban_lainnya = $request->input('beban_lainnya');
             $tax->pendapatan_lain = $request->input('pendapatan_lain');
             $tax->total = $request->input('total');
-            $tax->total_dengan_pajak = $request->input('total_dengan_pajak');
+            $tax->total_pajak = $request->input('total_pajak');
             $tax->save();
             
             return redirect(self::REDIRECT_VIEW);

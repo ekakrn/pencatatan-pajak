@@ -38,7 +38,7 @@
                             <td>{{ $data->beban_lainnya }}</td>
                             <td>{{ $data->pendapatan_lain }}</td>
                             <td>{{ $data->total }}</td>
-                            <td>{{ $data->total_dengan_pajak }}</td>
+                            <td>{{ $data->total_pajak }}</td>
                             <td>
 
                             </td>

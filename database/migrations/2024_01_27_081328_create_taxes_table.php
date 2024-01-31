@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('beban_lainnya');
             $table->integer('pendapatan_lain');
             $table->integer('total');
-            $table->integer('total_dengan_pajak');
+            $table->integer('total_pajak');
             $table->timestamps();
         });
     }

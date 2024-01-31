@@ -16,6 +16,6 @@ class Tax extends Model
         'beban_lainnya',
         'pendapatan_lain',
         'total',
-        'total_dengan_pajak',
+        'total_pajak',
     ];
 }
