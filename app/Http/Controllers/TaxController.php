@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExportClass;
 use App\Models\Tax;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -116,5 +117,18 @@ class TaxController extends Controller
         }
    
         return redirect('login')->withSuccess(AuthController::NOT_ALLOWED);
+    }
+
+    public function exportById($id)
+    {
+        return \Excel::download(new ExportClass($id, [
+            'penjualan',
+            'beban_administrasi',
+            'beban_pemasaran',
+            'beban_lainnya',
+            'pendapatan_lain',
+            'total',
+            'total_pajak',
+        ]), 'exported_data_'.$id.'.xlsx');
     }
 }
