@@ -16,7 +16,8 @@
 <div class="row">
     <div class="col">
         <h2 class="text-center mb-5 text-dark">Laba Rugi Setelah Rekonsiliasi Fiskal</h2>
-        <form action="/add-data">
+        <form action="/add-data" method="post">
+            @csrf
             <div class="mb-3 row">
                 <label for="penjualan" class="col-sm-3 col-form-label">Penjualan</label>
                 <div class="col-sm-9">

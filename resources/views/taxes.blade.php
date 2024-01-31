@@ -30,15 +30,15 @@
                     @foreach ($taxes as $data)
 
                         <tr class="text-center">
-                            <td>{{ $data->penjualan }}</td>
-                            <td>
-                                <div> Administrasi: {{ $data->beban_administrasi }}</div>
-                                <div> Pemasaran: {{ $data->beban_pemasaran }}</div>
-                                <div> Lainnya: {{ $data->beban_lainnya }}</div>
+                            <td>Rp{{ number_format($data->penjualan, 0, ',', '.') }}</td>
+                            <td class="text-start">
+                                <div> Administrasi: Rp{{ number_format($data->beban_administrasi, 0, ',', '.') }}</div>
+                                <div> Pemasaran: Rp{{ number_format($data->beban_pemasaran, 0, ',', '.') }}</div>
+                                <div> Lainnya: Rp{{ number_format($data->beban_lainnya, 0, ',', '.') }}</div>
                             </td>
-                            <td>{{ $data->pendapatan_lain }}</td>
-                            <td>{{ $data->total }}</td>
-                            <td>{{ $data->total_pajak }}</td>
+                            <td>Rp{{ number_format($data->pendapatan_lain, 0, ',', '.') }}</td>
+                            <td>Rp{{ number_format($data->total, 0, ',', '.') }}</td>
+                            <td>Rp{{ number_format($data->total_pajak, 0, ',', '.') }}</td>
                             <td>
                                 <a href="/export-excel" class="btn btn-success mb-1">Excel</a>
                                 <a href="/edit-page" class="btn btn-primary mb-1">Ubah</a>
